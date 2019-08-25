@@ -2,6 +2,8 @@
 
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
+import VideosList from 'components/videos-list'
+import VideoSingle from 'components/video-single'
 
 import 'normalize.css'
 import 'milligram'
@@ -13,12 +15,11 @@ const App = () => (
     </Header>
 
     <Main>
-      Conteúdo
+      <VideoSingle />
+      <VideosList />
     </Main>
 
-    <Footer>
-      &copy; 2018
-    </Footer>
+    <Footer>&copy; 2019</Footer>
   </Container>
 )
 
@@ -45,7 +46,7 @@ const Main = styled.main`
 `
 
 const Footer = styled.footer`
-   height: ${footerHeight};
+  height: ${footerHeight};
   background: #333;
 `
 

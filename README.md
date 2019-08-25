@@ -1,5 +1,3 @@
-# Workflow ReactJS
-
 ## What's inside it?
 
 - Webpack 3+
