@@ -10,14 +10,14 @@ const RegisterVideo = ({ onSubmit, onCloseRegisterVideo }) => (
   <Form onSubmit={onSubmit}>
     <h2>Cadastrar vídeo</h2>
 
-    <label htmlFor="id">ID do vídeo:</label>
-    <input type="text" id="id" name="id" />
+    <label htmlFor='id'>ID do vídeo:</label>
+    <input type='text' id='id' name='id' />
 
-    <label htmlFor="title">Titulo do vídeo:</label>
-    <input type="text" id="title" name="title" />
+    <label htmlFor='title'>Titulo do vídeo:</label>
+    <input type='text' id='title' name='title' />
 
-    <button type="submit">Cadastrar</button>
-    <ButtonClose type="button" onClick={onCloseRegisterVideo}>
+    <button type='submit'>Cadastrar</button>
+    <ButtonClose type='button' onClick={onCloseRegisterVideo}>
       &times;
     </ButtonClose>
   </Form>

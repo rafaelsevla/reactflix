@@ -10,6 +10,7 @@
 - Dynamic `import()` function
 - Webpack tree shaking!
 - [Preact](https://preactjs.com/) for production build (optional)
+- Redux!
 
 ## Dependencies:
 

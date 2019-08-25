@@ -3,17 +3,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const VideoSingle = () => (
+const VideoSingle = ({ id, title }) => (
   <Container>
     <Iframe
       width='560'
       height='480'
-      src='https://www.youtube-nocookie.com/embed/R1611bVKlGU'
+      src={`https://www.youtube-nocookie.com/embed/${id}`}
       frameborder='0'
       allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
       allowfullscreen
     />
-    <Title>title of video</Title>
+    <Title>{title}</Title>
   </Container>
 )
 

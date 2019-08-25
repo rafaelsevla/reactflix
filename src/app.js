@@ -15,19 +15,24 @@ import 'normalize.css'
 import 'milligram'
 
 class App extends PureComponent {
-  componentDidMount() {
+  componentDidMount () {
     this.props.fetchVideos()
   }
 
-  render() {
-    const { isRegisterVideoFormOpened } = this.props
+  render () {
+    const { isRegisterVideoFormOpened, videoSingleId, videos } = this.props
     return (
       <Container>
         <Header />
         <Main>
           {isRegisterVideoFormOpened && <RegisterVideo />}
 
-          <VideoSingle />
+          {videoSingleId && (
+            <VideoSingle
+              id={videoSingleId}
+              title={videos[videoSingleId].title}
+            />
+          )}
           <VideosList />
         </Main>
 
@@ -52,7 +57,9 @@ const Main = styled.main`
 `
 
 const mapStateToProps = state => ({
-  isRegisterVideoFormOpened: state.ui.isRegisterVideoFormOpened
+  isRegisterVideoFormOpened: state.ui.isRegisterVideoFormOpened,
+  videoSingleId: state.videoSingle,
+  videos: state.videos
 })
 
 const mapDispatchToProps = {
