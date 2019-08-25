@@ -6,10 +6,23 @@ import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import App from './app'
 import configureStore from './redux-flow/configure-store'
+import { db } from './config/firebase'
 
 const store = configureStore()
 
-const renderApp = (NextApp) => {
+const videos = db.ref('videos')
+
+videos.on(
+  'value',
+  snapshot => {
+    console.log('snapshot: ', snapshot.val())
+  },
+  error => {
+    console.log('error: ', error)
+  }
+)
+
+const renderApp = NextApp => {
   render(
     <AppContainer>
       <Provider store={store}>
