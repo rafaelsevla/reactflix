@@ -4,13 +4,11 @@ import { ADD_VIDEO } from './actions'
 import { db } from 'config/firebase'
 
 export const registerVideo = ({ id, title }) => async dispatch => {
-  console.log('cadastrando')
   await db
     .ref('videos')
     .child(id)
     .update({ id, title })
 
-  console.log('video cadastrado')
   dispatch(addVideo({ id, title }))
 }
 
